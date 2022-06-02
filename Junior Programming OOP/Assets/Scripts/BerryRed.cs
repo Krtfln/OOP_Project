@@ -2,23 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BerryRed : Berries
+public class BerryRed : Bush
 {
-    // Start is called before the first frame update
-    void Start()
+    public BerryRed() : base(5, 10)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public override void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Child Triggered");
-        base.OnTriggerEnter(other);
-    }
 }
