@@ -8,11 +8,12 @@ public class Bush : MonoBehaviour
     private int pointsToAdd;
     private float speedMultiplier;
     private GameManager gameManager;
-
-    public Bush(float timeToGrow, int pointsToAdd)
+    
+    public Bush(float timeToGrow, int pointsToAdd, float speedMultiplier)
     {
         this.timeToGrow = timeToGrow;
-        this.pointsToAdd = pointsToAdd; 
+        this.pointsToAdd = pointsToAdd;
+        this.speedMultiplier = speedMultiplier;
     }
 
     private void Start()
@@ -26,6 +27,7 @@ public class Bush : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         gameManager.AddPoints(pointsToAdd);
         StartCoroutine(BerryReady());
+        other.gameObject.GetComponent<PlayerController>().ChangeSpeed(speedMultiplier);
     }
 
     IEnumerator BerryReady()

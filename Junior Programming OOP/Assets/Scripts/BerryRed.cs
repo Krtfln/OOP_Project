@@ -10,7 +10,7 @@ public class BerryRed : Bush
     private static int _pointsToAdd = 10;
     public static int PointsToAdd { get { return _pointsToAdd; } set { _pointsToAdd = value; } }
 
-    public BerryRed() : base(timeToGrow: TimeToGrow, pointsToAdd: PointsToAdd)
+    public BerryRed() : base(timeToGrow: TimeToGrow, pointsToAdd: PointsToAdd, 2)
     {
     }
 }

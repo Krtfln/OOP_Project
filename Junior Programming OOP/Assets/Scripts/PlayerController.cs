@@ -33,4 +33,11 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    public void ChangeSpeed(float speedMultiplier)
+    {
+        _agent.acceleration *= speedMultiplier;
+        _agent.speed *= speedMultiplier;
+        Debug.Log(_agent.speed);
+    }
 }
