@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class BerryRed : Bush
 {
-    public BerryRed() : base(5, 10)
+    private static float _timeToGrow = 5f;
+    public static float TimeToGrow { get { return _timeToGrow; } set { _timeToGrow = value; } }
+
+    private static int _pointsToAdd = 10;
+    public static int PointsToAdd { get { return _pointsToAdd; } set { _pointsToAdd = value; } }
+
+    public BerryRed() : base(timeToGrow: TimeToGrow, pointsToAdd: PointsToAdd)
     {
     }
-
 }

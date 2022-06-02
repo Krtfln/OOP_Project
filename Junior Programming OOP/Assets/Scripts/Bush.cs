@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Bush : MonoBehaviour
 {
-    public float timeToGrow;
-    public int pointsToAdd;
-    public float speedMultiplier;
+    private float timeToGrow;
+    private int pointsToAdd;
+    private float speedMultiplier;
     private GameManager gameManager;
 
     public Bush(float timeToGrow, int pointsToAdd)
