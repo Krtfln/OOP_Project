@@ -8,6 +8,7 @@ public class Bush : MonoBehaviour
     private int pointsToAdd;
     private float speedMultiplier;
     private GameManager gameManager;
+    private PlayerController playerController;
     
     public Bush(float timeToGrow, int pointsToAdd, float speedMultiplier)
     {
@@ -19,15 +20,18 @@ public class Bush : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered");
-        transform.GetChild(0).gameObject.SetActive(false);
-        gameManager.AddPoints(pointsToAdd);
-        StartCoroutine(BerryReady());
-        other.gameObject.GetComponent<PlayerController>().ChangeSpeed(speedMultiplier);
+        if (gameObject == playerController.hit.collider.gameObject)
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            gameManager.AddPoints(pointsToAdd);
+            StartCoroutine(BerryReady());
+            playerController.ChangeSpeed(speedMultiplier);
+        }
     }
 
     IEnumerator BerryReady()

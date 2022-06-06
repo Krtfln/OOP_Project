@@ -6,12 +6,13 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent = null;
-    RaycastHit hit;
+    public RaycastHit hit;
+    private Selection selectionManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        selectionManager = GameObject.Find("SelectionManager").GetComponent<Selection>();
     }
 
     // Update is called once per frame
@@ -29,6 +30,10 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                if (hit.collider.CompareTag("Bush"))
+                {
+                    selectionManager.SelectBush(hit.collider.gameObject);
+                }
                 _agent.SetDestination(hit.point);
             }
         }
@@ -38,6 +43,6 @@ public class PlayerController : MonoBehaviour
     {
         _agent.acceleration *= speedMultiplier;
         _agent.speed *= speedMultiplier;
-        Debug.Log(_agent.speed);
+        Debug.Log("Speed" + _agent.speed);
     }
 }

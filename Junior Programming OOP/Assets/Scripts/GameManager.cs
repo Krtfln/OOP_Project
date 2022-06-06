@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +13,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(Timer());
         InvokeRepeating("Timer", 1f, 1f);
     }
 
@@ -28,15 +26,8 @@ public class GameManager : MonoBehaviour
     {
         points += pointsToAdd;
         pointsText.text = "Points: " + points;
-        Debug.Log(points);
+        Debug.Log("Points" + points);
     }
-
-    //IEnumerator Timer()
-    //{
-    //    yield return new WaitForSeconds(1);
-    //    time--;
-    //    timerText.text = "Time: " + time;
-    //}
 
     void Timer()
     {
