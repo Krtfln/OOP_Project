@@ -5,8 +5,9 @@ using UnityEngine;
 public class Bush : MonoBehaviour
 {
     private float timeToGrow;
-    private int pointsToAdd;
     private float speedMultiplier;
+    private int pointsToAdd;
+    private bool berryIsReady = true;
     private GameManager gameManager;
     private PlayerController playerController;
     
@@ -23,20 +24,21 @@ public class Bush : MonoBehaviour
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
-        if (gameObject == playerController.hit.collider.gameObject)
+        if (gameObject == playerController.hit.collider.gameObject && berryIsReady)
         {
             transform.GetChild(0).gameObject.SetActive(false);
+            berryIsReady = false;
             gameManager.AddPoints(pointsToAdd);
-            StartCoroutine(BerryReady());
+            Invoke("BerryGrow", timeToGrow);
             playerController.ChangeSpeed(speedMultiplier);
         }
     }
 
-    IEnumerator BerryReady()
+    void BerryGrow()
     {
-        yield return new WaitForSeconds(timeToGrow);
         transform.GetChild(0).gameObject.SetActive(true);
+        berryIsReady = true;
     }
 }
