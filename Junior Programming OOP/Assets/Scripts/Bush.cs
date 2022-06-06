@@ -26,7 +26,7 @@ public class Bush : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if (gameObject == playerController.hit.collider.gameObject && berryIsReady)
+        if (gameObject == playerController.hit.collider.gameObject && berryIsReady && gameManager.gameIsActive)
         {
             transform.GetChild(0).gameObject.SetActive(false);
             berryIsReady = false;

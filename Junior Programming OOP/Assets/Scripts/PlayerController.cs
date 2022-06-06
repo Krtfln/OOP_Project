@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private NavMeshAgent _agent = null;
     public RaycastHit hit;
     private Selection selectionManager;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         selectionManager = GameObject.Find("SelectionManager").GetComponent<Selection>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerMoving()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && gameManager.gameIsActive)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 

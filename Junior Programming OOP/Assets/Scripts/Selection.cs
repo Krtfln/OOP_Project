@@ -22,6 +22,7 @@ public class Selection : MonoBehaviour
 
     public void SelectBush(GameObject selectedBush)
     {
+        Debug.Log("SelectBushMethod");
         if(prevSelectedBush == null)
         {
             selectedBush.GetComponent<Renderer>().material = selectedMaterial;

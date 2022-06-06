@@ -10,7 +10,7 @@ public class BerryYellow : Bush
     private static int _pointsToAdd = 1;
     public static int PointsToAdd { get { return _pointsToAdd; } set { _pointsToAdd = value; } }
 
-    private static int _speedMultiplier = 8;
+    private static int _speedMultiplier = 10;
 
     public static int SpeedMultiplier { get { return _speedMultiplier; } set { _speedMultiplier = value; } }
 
