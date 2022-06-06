@@ -5,17 +5,19 @@ using UnityEngine;
 public class Bush : MonoBehaviour
 {
     private float timeToGrow;
-    private float speedMultiplier;
+    private float speed;
     private int pointsToAdd;
     private bool berryIsReady = true;
+    private string speedText;
     private GameManager gameManager;
     private PlayerController playerController;
-    
-    public Bush(float timeToGrow, int pointsToAdd, float speedMultiplier)
+
+    public Bush(float timeToGrow, int pointsToAdd, float speed, string speedText)
     {
         this.timeToGrow = timeToGrow;
         this.pointsToAdd = pointsToAdd;
-        this.speedMultiplier = speedMultiplier;
+        this.speed = speed;
+        this.speedText = speedText;
     }
 
     private void Start()
@@ -31,8 +33,9 @@ public class Bush : MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(false);
             berryIsReady = false;
             gameManager.AddPoints(pointsToAdd);
+            gameManager.ShowInfoText(pointsToAdd, speedText);
             Invoke("BerryGrow", timeToGrow);
-            playerController.ChangeSpeed(speedMultiplier);
+            playerController.ChangeSpeed(speed);
         }
     }
 

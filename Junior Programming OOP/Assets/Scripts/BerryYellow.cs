@@ -10,11 +10,14 @@ public class BerryYellow : Bush
     private static int _pointsToAdd = 1;
     public static int PointsToAdd { get { return _pointsToAdd; } set { _pointsToAdd = value; } }
 
-    private static int _speedMultiplier = 10;
+    private static int _speed = 10;
 
-    public static int SpeedMultiplier { get { return _speedMultiplier; } set { _speedMultiplier = value; } }
+    public static int Speed { get { return _speed; } set { _speed = value; } }
 
-    public BerryYellow() : base(timeToGrow: TimeToGrow, pointsToAdd: PointsToAdd, speedMultiplier: SpeedMultiplier)
+    private static string _speedText = "Speed >>>";
+    public static string SpeedText { get { return _speedText; } set { _speedText = value; } }
+
+    public BerryYellow() : base(timeToGrow: TimeToGrow, pointsToAdd: PointsToAdd, speed: Speed, speedText: SpeedText)
     {
     }
 }

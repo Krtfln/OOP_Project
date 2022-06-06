@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private NavMeshAgent _agent = null;
+    [SerializeField] private NavMeshAgent agent = null;
     public RaycastHit hit;
     private Selection selectionManager;
     private GameManager gameManager;
@@ -36,15 +36,15 @@ public class PlayerController : MonoBehaviour
                 {
                     selectionManager.SelectBush(hit.collider.gameObject);
                 }
-                _agent.SetDestination(hit.point);
+                agent.SetDestination(hit.point);
             }
         }
     }
 
-    public void ChangeSpeed(float speedMultiplier)
+    public void ChangeSpeed(float speed)
     {
-        _agent.acceleration = speedMultiplier;
-        _agent.speed = speedMultiplier;
-        Debug.Log("Speed" + _agent.speed);
+        agent.acceleration = speed;
+        agent.speed = speed;
+        Debug.Log("Speed" + agent.speed);
     }
 }
