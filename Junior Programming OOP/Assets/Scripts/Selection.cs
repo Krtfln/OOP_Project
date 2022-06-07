@@ -8,18 +8,6 @@ public class Selection : MonoBehaviour
     [SerializeField] Material dafaultMaterial;
     [SerializeField] Material selectedMaterial;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SelectBush(GameObject selectedBush)
     {
         if (prevSelectedBush == null)

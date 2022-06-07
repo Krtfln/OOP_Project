@@ -11,7 +11,6 @@ public class BerryRed : Bush
     public static int PointsToAdd { get { return _pointsToAdd; } set { _pointsToAdd = value; } }
 
     private static int _speed = 5;
-
     public static int Speed { get { return _speed; } set { _speed = value; } }
 
     private static string _speedText = "Speed >>";

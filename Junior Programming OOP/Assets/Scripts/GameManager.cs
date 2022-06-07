@@ -21,12 +21,6 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("Timer", 1f, 1f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void AddPoints(int pointsToAdd)
     {
         points += pointsToAdd;

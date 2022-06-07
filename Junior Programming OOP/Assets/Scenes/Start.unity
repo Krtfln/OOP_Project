@@ -874,7 +874,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.3529412, g: 0.41568628, b: 0.26666668, a: 0}
+  m_BackGroundColor: {r: 0.26041293, g: 0.41509432, b: 0.28329933, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1115,12 +1115,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'in this game you need to pick berries from the bushes
+  m_text: 'in this game you need to pick berries from the bushes.
 
     The goal of
-    the game is to collect 50 points
+    the game is to collect 50 points.
 
-    You have only 30 seconds'
+    You have only 30 seconds.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
