@@ -8,5 +8,5 @@ public class SceneScript : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(1);
-    }    
+    }
 }
